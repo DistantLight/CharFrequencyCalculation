@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CharFrequencyCalculationTest {
     @Autowired
     private TestRestTemplate restTemplate;
-    private final String URL = "http://localhost:8080/api/v1/char-frequency/calculate";
+    private final String URL = "http://localhost:8080/api/v1/chars/counting";
 
     @Test
     public void getFrequencyForValidInput() {
