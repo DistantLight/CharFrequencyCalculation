@@ -3,6 +3,7 @@ package com.distantlight.CharFrequencyCalculation.controllers;
 import com.distantlight.CharFrequencyCalculation.dtos.CharFrequencyRequest;
 import com.distantlight.CharFrequencyCalculation.dtos.CharFrequencyResponse;
 import com.distantlight.CharFrequencyCalculation.services.CalculationService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,7 @@ public class CalculationController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> getCharFrequency(@RequestBody CharFrequencyRequest request){
+    public ResponseEntity<?> getCharFrequency(@Valid @RequestBody CharFrequencyRequest request){
         CharFrequencyResponse response = calculationService.getCharFrequency(request);
         return ResponseEntity.ok(response);
     }
