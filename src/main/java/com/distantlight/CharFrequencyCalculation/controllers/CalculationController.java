@@ -20,8 +20,7 @@ public class CalculationController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> getCharFrequency(@Valid @RequestBody CharFrequencyRequest request){
-        CharFrequencyResponse response = calculationService.getCharFrequency(request);
-        return ResponseEntity.ok(response);
+    public CharFrequencyResponse getCharFrequency(@Valid @RequestBody CharFrequencyRequest request){
+        return calculationService.getCharFrequency(request);
     }
 }
